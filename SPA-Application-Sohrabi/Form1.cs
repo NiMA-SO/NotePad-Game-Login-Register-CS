@@ -31,7 +31,7 @@ namespace SPA_Application_Sohrabi
 
         private void btnSubmit_MouseEnter(object sender, EventArgs e)
         {
-            btnSubmit.BackColor = Color.Orange;
+            btnSubmit.BackColor = Color.FromArgb(192, 192, 255);
             btnSubmit.ForeColor = Color.White;
         }
 
@@ -43,7 +43,7 @@ namespace SPA_Application_Sohrabi
 
         private void btnReset_MouseEnter(object sender, EventArgs e)
         {
-            btnReset.BackColor = Color.Orange;
+            btnReset.BackColor = Color.FromArgb(192, 192, 255);
             btnReset.ForeColor = Color.White;
         }
 
@@ -211,7 +211,7 @@ namespace SPA_Application_Sohrabi
 
         private void btnRegister_MouseEnter(object sender, EventArgs e)
         {
-            btnRegister.BackColor = Color.Orange;
+            btnRegister.BackColor = Color.FromArgb(192,192,255);
         }
 
         private void btnRegister_MouseLeave(object sender, EventArgs e)
@@ -221,7 +221,7 @@ namespace SPA_Application_Sohrabi
 
         private void btnReset2_MouseEnter(object sender, EventArgs e)
         {
-            btnReset2.BackColor = Color.Orange;
+            btnReset2.BackColor = Color.FromArgb(192, 192, 255);
         }
 
         private void btnReset2_MouseLeave(object sender, EventArgs e)
@@ -284,6 +284,8 @@ namespace SPA_Application_Sohrabi
                 {
                     MessageBox.Show("خوش آمدید آقا/خانم: " + sqlArray[userIndex - 1], "موفقیت", MessageBoxButtons.OK);
                     this.Close();
+                    //menu f3 = new menu();
+                    //f3.ShowDialog();
                 }
                 else
                 {
