@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bingo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bingo.Designer.cs">
+      <DependentUpon>bingo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     <Compile Include="score.Designer.cs">
       <DependentUpon>score.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="bingo.resx">
+      <DependentUpon>bingo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

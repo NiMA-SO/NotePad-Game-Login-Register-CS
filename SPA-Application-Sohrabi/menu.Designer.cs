@@ -38,7 +38,10 @@
             this.mines = new System.Windows.Forms.Button();
             this.Title = new System.Windows.Forms.Label();
             this.star = new System.Windows.Forms.Button();
+            this.picCursor = new System.Windows.Forms.PictureBox();
+            this.Bingo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCursor)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -59,6 +62,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             // 
             // Number
             // 
@@ -81,6 +85,10 @@
             // 
             this.Notepad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.Notepad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Notepad.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.Notepad.FlatAppearance.BorderSize = 2;
+            this.Notepad.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.Notepad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
             this.Notepad.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Notepad.ForeColor = System.Drawing.Color.Blue;
             this.Notepad.Location = new System.Drawing.Point(12, 21);
@@ -102,7 +110,7 @@
             this.ship.ForeColor = System.Drawing.Color.Blue;
             this.ship.Location = new System.Drawing.Point(12, 416);
             this.ship.Name = "ship";
-            this.ship.Size = new System.Drawing.Size(191, 59);
+            this.ship.Size = new System.Drawing.Size(159, 59);
             this.ship.TabIndex = 1;
             this.ship.Text = "Little Ship";
             this.ship.UseVisualStyleBackColor = false;
@@ -117,9 +125,9 @@
             this.neurometer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.neurometer.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.neurometer.ForeColor = System.Drawing.Color.Blue;
-            this.neurometer.Location = new System.Drawing.Point(491, 416);
+            this.neurometer.Location = new System.Drawing.Point(458, 416);
             this.neurometer.Name = "neurometer";
-            this.neurometer.Size = new System.Drawing.Size(225, 59);
+            this.neurometer.Size = new System.Drawing.Size(173, 59);
             this.neurometer.TabIndex = 1;
             this.neurometer.Text = "Neurometer";
             this.neurometer.UseVisualStyleBackColor = false;
@@ -133,11 +141,11 @@
             this.mines.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mines.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mines.ForeColor = System.Drawing.Color.Blue;
-            this.mines.Location = new System.Drawing.Point(273, 416);
+            this.mines.Location = new System.Drawing.Point(176, 416);
             this.mines.Name = "mines";
-            this.mines.Size = new System.Drawing.Size(163, 59);
+            this.mines.Size = new System.Drawing.Size(277, 59);
             this.mines.TabIndex = 1;
-            this.mines.Text = "rock";
+            this.mines.Text = "Rock Paper Scissors";
             this.mines.UseVisualStyleBackColor = false;
             this.mines.Click += new System.EventHandler(this.mines_Click);
             this.mines.MouseEnter += new System.EventHandler(this.mines_MouseEnter);
@@ -163,6 +171,9 @@
             this.star.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("star.BackgroundImage")));
             this.star.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.star.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.star.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            this.star.FlatAppearance.BorderSize = 3;
+            this.star.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.star.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.star.ForeColor = System.Drawing.Color.Blue;
             this.star.Location = new System.Drawing.Point(745, 416);
@@ -174,12 +185,40 @@
             this.star.MouseEnter += new System.EventHandler(this.star_MouseEnter);
             this.star.MouseLeave += new System.EventHandler(this.star_MouseLeave);
             // 
+            // picCursor
+            // 
+            this.picCursor.BackColor = System.Drawing.Color.Blue;
+            this.picCursor.Image = ((System.Drawing.Image)(resources.GetObject("picCursor.Image")));
+            this.picCursor.Location = new System.Drawing.Point(0, 163);
+            this.picCursor.Name = "picCursor";
+            this.picCursor.Size = new System.Drawing.Size(20, 20);
+            this.picCursor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCursor.TabIndex = 3;
+            this.picCursor.TabStop = false;
+            // 
+            // Bingo
+            // 
+            this.Bingo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Bingo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.Bingo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Bingo.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bingo.ForeColor = System.Drawing.Color.Blue;
+            this.Bingo.Location = new System.Drawing.Point(637, 416);
+            this.Bingo.Name = "Bingo";
+            this.Bingo.Size = new System.Drawing.Size(102, 59);
+            this.Bingo.TabIndex = 1;
+            this.Bingo.Text = "Bingo";
+            this.Bingo.UseVisualStyleBackColor = false;
+            this.Bingo.Click += new System.EventHandler(this.Bingo_Click);
+            // 
             // menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 493);
+            this.Controls.Add(this.picCursor);
             this.Controls.Add(this.Title);
+            this.Controls.Add(this.Bingo);
             this.Controls.Add(this.neurometer);
             this.Controls.Add(this.mines);
             this.Controls.Add(this.ship);
@@ -188,10 +227,12 @@
             this.Controls.Add(this.Number);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "menu";
             this.Text = "Hossein Sohrabi";
             this.Load += new System.EventHandler(this.menu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCursor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -207,5 +248,7 @@
         private System.Windows.Forms.Button mines;
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Button star;
+        private System.Windows.Forms.PictureBox picCursor;
+        private System.Windows.Forms.Button Bingo;
     }
 }

@@ -29,23 +29,7 @@ namespace SPA_Application_Sohrabi
         int i = 0;
         private void Numbers_KeyDown(object sender, KeyEventArgs e)
         {
-            string code = lblLetter.Text;
-            string key = e.KeyCode.ToString();
-            if (key == code) {
-                i++;
-                score.Text = i.ToString();
-                Console.Beep(500,1000);
-                Random rnd = new Random();
-                char letter = (char)rnd.Next(65, 91);
-                lblLetter.Text = letter.ToString();
-            }
-            else
-            {
-                timer1.Enabled = false;
-                Console.Beep(500,2000);
-                MessageBox.Show("شما بازنده شدید","بازنده",MessageBoxButtons.OK);
-                Close();
-            }
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -69,6 +53,34 @@ namespace SPA_Application_Sohrabi
                 else
                 {
                     MessageBox.Show("ضعیف");
+                }
+            }
+        }
+
+        private void Numbers_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (lblLetter.Text != "")
+            {
+                string code = lblLetter.Text;
+                string key = e.KeyChar.ToString();
+
+                if (key == code)
+                {
+                    i++;
+                    score.Text = i.ToString();
+                    Console.Beep(500, 1000);
+
+                    Random rnd = new Random();
+                    char letter = (char)rnd.Next(65, 123);
+                    lblLetter.Text = letter.ToString();
+                }
+                else
+                {
+                    timer1.Enabled = false;
+                    lblLetter.BackColor = Color.Red;
+                    Console.Beep(500, 500);
+                    MessageBox.Show("شما بازنده شدید", "بازنده", MessageBoxButtons.OK);
+                    Close();
                 }
             }
         }

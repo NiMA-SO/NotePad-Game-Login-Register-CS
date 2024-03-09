@@ -32,7 +32,7 @@ namespace SPA_Application_Sohrabi
         private void btnSubmit_MouseEnter(object sender, EventArgs e)
         {
             btnSubmit.BackColor = Color.FromArgb(192, 192, 255);
-            btnSubmit.ForeColor = Color.White;
+            btnSubmit.ForeColor = Color.FromArgb(128, 128, 255);
         }
 
         private void btnSubmit_MouseLeave(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace SPA_Application_Sohrabi
         private void btnReset_MouseEnter(object sender, EventArgs e)
         {
             btnReset.BackColor = Color.FromArgb(192, 192, 255);
-            btnReset.ForeColor = Color.White;
+            btnReset.ForeColor = Color.FromArgb(128, 128, 255);
         }
 
         private void btnReset_MouseLeave(object sender, EventArgs e)
@@ -118,14 +118,38 @@ namespace SPA_Application_Sohrabi
             if (password.Length < 5)
             {
                 tbRePass.ForeColor = Color.Red;
+                if (eye3 == false)
+                {
+                    reRegisterImage.ImageLocation = "eye/eye-close-red.png";
+                }
+                else if (eye3 == true)
+                {
+                    reRegisterImage.ImageLocation = "eye/eye-red.png";
+                }
             }
             else if (password.Length < 8 && password.Length > 5)
             {
                 tbRePass.ForeColor = Color.DarkRed;
+                if (eye3 == false)
+                {
+                    reRegisterImage.ImageLocation = "eye/eye-close-red.png";
+                }
+                else if (eye3 == true)
+                {
+                    reRegisterImage.ImageLocation = "eye/eye-red.png";
+                }
             }
             else if (password.Length > 8)
             {
                 tbRePass.ForeColor = Color.LightGreen;
+                if (eye3 == false)
+                {
+                    reRegisterImage.ImageLocation = "eye/eye-close-green.png";
+                }
+                else if (eye3 == true)
+                {
+                    reRegisterImage.ImageLocation = "eye/eye-green.png";
+                }
             }
         }
 
@@ -135,14 +159,38 @@ namespace SPA_Application_Sohrabi
             if (password.Length < 5)
             {
                 tbPassword.ForeColor = Color.Red;
+                if (eye2 == false) 
+                {
+                    rgisterImage.ImageLocation = "eye/eye-close-red.png";
+                }
+                else if (eye2 == true)
+                {
+                    rgisterImage.ImageLocation = "eye/eye-red.png";
+                }
             }
             else if (password.Length < 8 && password.Length > 5)
             {
                 tbPassword.ForeColor = Color.DarkRed;
+                if (eye2 == false)
+                {
+                    rgisterImage.ImageLocation = "eye/eye-close-red.png";
+                }
+                else if (eye2 == true)
+                {
+                    rgisterImage.ImageLocation = "eye/eye-red.png";
+                }
             }
             else if (password.Length > 8)
             {
                 tbPassword.ForeColor = Color.LightGreen;
+                if (eye2 == false)
+                {
+                    rgisterImage.ImageLocation = "eye/eye-close-green.png";
+                }
+                else if (eye2 == true)
+                {
+                    rgisterImage.ImageLocation = "eye/eye-green.png";
+                }
             }
         }
         bool eye2 = true;
@@ -184,14 +232,38 @@ namespace SPA_Application_Sohrabi
             if (password.Length < 5)
             {
                 tbPass.ForeColor = Color.Red;
+                if (eye == false)
+                {
+                    pictureBox1.ImageLocation = "eye/eye-close-red.png";
+                }
+                else if (eye == true)
+                {
+                    pictureBox1.ImageLocation = "eye/eye-red.png";
+                }
             }
             else if (password.Length < 8 && password.Length > 5)
             {
                 tbPass.ForeColor = Color.DarkRed;
+                if (eye == false)
+                {
+                    pictureBox1.ImageLocation = "eye/eye-close-red.png";
+                }
+                else if (eye == true)
+                {
+                    pictureBox1.ImageLocation = "eye/eye-red.png";
+                }
             }
             else if (password.Length > 8)
             {
                 tbPass.ForeColor = Color.LightGreen;
+                if (eye == false)
+                {
+                    pictureBox1.ImageLocation = "eye/eye-close-green.png";
+                }
+                else if (eye == true)
+                {
+                    pictureBox1.ImageLocation = "eye/eye-green.png";
+                }
             }
         }
 
@@ -212,21 +284,25 @@ namespace SPA_Application_Sohrabi
         private void btnRegister_MouseEnter(object sender, EventArgs e)
         {
             btnRegister.BackColor = Color.FromArgb(192,192,255);
+            btnRegister.ForeColor = Color.FromArgb(128, 128, 255);
         }
 
         private void btnRegister_MouseLeave(object sender, EventArgs e)
         {
             btnRegister.BackColor = Color.Black;
+            btnRegister.ForeColor = Color.White;
         }
 
         private void btnReset2_MouseEnter(object sender, EventArgs e)
         {
             btnReset2.BackColor = Color.FromArgb(192, 192, 255);
+            btnReset2.ForeColor = Color.FromArgb(128, 128, 255);
         }
 
         private void btnReset2_MouseLeave(object sender, EventArgs e)
         {
             btnReset2.BackColor = Color.Black;
+            btnReset2.ForeColor = Color.White;
         }
 
         string[] sqlArray = new string[90];
@@ -317,61 +393,106 @@ namespace SPA_Application_Sohrabi
 
         private void tbRePass_Enter(object sender, EventArgs e)
         {
-            tbRePass.BackColor = Color.FromArgb(224, 224, 224);
+            tbRePass.BackColor = Color.FromArgb(192, 192, 255);
         }
 
         private void tbPassword_Enter(object sender, EventArgs e)
         {
-            tbPassword.BackColor = Color.FromArgb(224, 224, 224);
+            rgisterImage.Visible = true;
+            tbPassword.BackColor = Color.FromArgb(192, 192, 255);
         }
 
         private void tbUserNameRegister_Enter(object sender, EventArgs e)
         {
-            tbUserNameRegister.BackColor = Color.FromArgb(224, 224, 224);
+            tbUserNameRegister.BackColor = Color.FromArgb(192, 192, 255);
         }
 
         private void tbName_Enter(object sender, EventArgs e)
         {
-            tbName.BackColor = Color.FromArgb(224, 224, 224);
+            tbName.BackColor = Color.FromArgb(192, 192, 255);
         }
 
         private void tbRePass_Leave(object sender, EventArgs e)
         {
-            tbRePass.BackColor = Color.Silver;
+            if (tbRePass.Text == "") 
+            {
+                tbRePass.BackColor = Color.FromArgb(128, 128, 255);
+            }
+            else
+            {
+                tbRePass.BackColor = Color.FromArgb(180, 180, 255);
+            }
+            
         }
 
         private void tbName_Leave(object sender, EventArgs e)
         {
-            tbName.BackColor = Color.Silver;
+            if (tbName.Text == "")
+            {
+                tbName.BackColor = Color.FromArgb(128, 128, 255);
+            }
+            else
+            {
+                tbName.BackColor = Color.FromArgb(180, 180, 255);
+            }
         }
 
         private void tbUserNameRegister_Leave(object sender, EventArgs e)
         {
-            tbUserNameRegister.BackColor = Color.Silver;
+            if (tbUserNameRegister.Text == "")
+            {
+                tbUserNameRegister.BackColor = Color.FromArgb(128, 128, 255);
+            }
+            else
+            {
+                tbUserNameRegister.BackColor = Color.FromArgb(180, 180, 255);
+            }
         }
 
         private void tbPassword_Leave(object sender, EventArgs e)
         {
-            tbPassword.BackColor = Color.Silver;
+            rgisterImage.Visible = false;
+            if (tbPassword.Text == "")
+            {
+                tbPassword.BackColor = Color.FromArgb(128, 128, 255);
+            }
+            else
+            {
+                tbPassword.BackColor = Color.FromArgb(180, 180, 255);
+            }
         }
 
         private void tbUserName_Enter(object sender, EventArgs e)
         {
-            tbUserName.BackColor = Color.FromArgb(224, 224, 224);
+            tbUserName.BackColor = Color.FromArgb(192, 192, 255);
         }
 
         private void tbUserName_Leave(object sender, EventArgs e)
         {
-            tbUserName.BackColor = Color.Silver;
+            if (tbUserName.Text == "")
+            {
+                tbUserName.BackColor = Color.FromArgb(128, 128, 255);
+            }
+            else
+            {
+                tbUserName.BackColor = Color.FromArgb(180, 180, 255);
+            }
         }
         private void tbPass_Enter(object sender, EventArgs e)
         {
-            tbPass.BackColor = Color.FromArgb(224, 224, 224);
+            tbPass.BackColor = Color.FromArgb(192, 192, 255);
         }
 
         private void tbPass_Leave(object sender, EventArgs e)
         {
-            tbPass.BackColor = Color.Silver;
+            if (tbPass.Text == "")
+            {
+                tbPass.BackColor = Color.FromArgb(128, 128, 255);
+            }
+            else
+            {
+                tbPass.BackColor = Color.FromArgb(180, 180, 255);
+            }
         }
 
         private void tbName_KeyDown(object sender, KeyEventArgs e)

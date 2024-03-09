@@ -8,6 +8,8 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace SPA_Application_Sohrabi
 {
@@ -18,17 +20,14 @@ namespace SPA_Application_Sohrabi
             InitializeComponent();
         }
 
+
         private void menu_Load(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
-            form.ShowDialog();
-            openFileDialog1.ShowDialog();
-            pictureBox1.ImageLocation = openFileDialog1.FileName;
+            //Form1 form = new Form1();
+            //form.ShowDialog();
+            //openFileDialog1.ShowDialog();
+            //pictureBox1.ImageLocation = openFileDialog1.FileName;
             Title.BackColor = Color.FromArgb(50, Color.White);
-        }
-
-        private void btnNotePad_MouseEnter(object sender, EventArgs e)
-        {
         }
 
         private void Notepad_MouseEnter(object sender, EventArgs e)
@@ -120,6 +119,17 @@ namespace SPA_Application_Sohrabi
         private void mines_Click(object sender, EventArgs e)
         {
             rps form = new rps();
+            form.ShowDialog();
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            picCursor.Location = e.Location;
+        }
+
+        private void Bingo_Click(object sender, EventArgs e)
+        {
+            bingo form = new bingo();
             form.ShowDialog();
         }
     }
